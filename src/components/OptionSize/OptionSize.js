@@ -1,9 +1,9 @@
 import styles from '../Product/Product.module.scss';
 import shortid from 'shortid';
 import clsx from 'clsx';
+import PropTypes from 'prop-types'
 
-const OptionSize = props => {
-  return(
+const OptionSize = props =>
     <div className={styles.sizes}>
       <h3 className={styles.optionLabel}>Sizes</h3>
       <ul className={styles.choices}>
@@ -13,7 +13,10 @@ const OptionSize = props => {
           </li>)}
       </ul>
     </div>
-  )
+
+OptionSize.propTypes = {
+  currentSize: PropTypes.string,
+  setCurrentSize: PropTypes.func
 }
 
 export default OptionSize;
